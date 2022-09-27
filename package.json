@@ -15,5 +15,8 @@
     "hardhat": "^2.10.2",
     "hardhat-gas-reporter": "^1.0.8",
     "undici": "^5.10.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3"
   }
 }
