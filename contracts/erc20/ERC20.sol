@@ -2,7 +2,17 @@
 pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract ContractName {
+contract Coin is ERC20, Ownable {
+    constructor() ERC20("My Coin Test", "COIN") {
+        _mint(_msgSender(), 10000 * 10**decimals());
+    }
 
+    /**
+     * @dev mint 
+     */
+    function mint(address to, uint256 amount) external onlyOwner {
+        _mint(to, amount);
+    }
 }
